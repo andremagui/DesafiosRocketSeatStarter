@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title> Curso Manipulando a DOM</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Ao clicar -->
+      <button onclick="alerta()"> Press here! </button>
+      <!-- Ao passar o mouse sobre -->
+      <button onmouseover="alerta()"> Press here! </button>
+      <!-- Ao apertar uma letra ou botao do teclado -->
+      <input onkeypress="alerta()"/>
+      <!-- ----------------------- -->
+      <input type="text" name="nome" id="nome" class="nome"/>
+      <input type="text" name="nome" id="nome2" class="nome"/>
+      <input type="text" name="name" id="name" class="name" />
+      <button class="botao">Adicionar um nome</button>
+      <hr><br>
+      <input id="nomezin" />
+      <hr><br>
+      <div class="box"></div>
+    </div>
+    
+    <script>
+      function alerta() {
+        alert('Clicado');
+      }
+      /* armazenado uma variavel para referenciar um elemento na DOM */
+      /* o document referencia a arvore de elementos ou a DOM */
+      var inputElement1 = document.getElementById('nome');
+      /* sempre retorna um vetor entao é possivel passar a posicao entre colchetes no final */
+      var inputElement2 = document.getElementsByTagName('input');
+      /* também retorna um vetor mas por classe */
+      var inputElement3 = document.getElementsByClassName('nome')[0];
+      /* ela faz uma varredura na dom procurando por um elemento na estrutura de arvore de elementos. Se tiver mais de um, ele pega o primeiro */
+      /* esta dentro do body (nao tem necessidade de incluir o body normalmente), em uma div com id app e é um elemento input */
+      var inputElement4 = document.querySelector('body div#app input');
+      /* tambem é possivel pegar diretamente por uma propriedade do elemento, como o name do elemento */
+      var inputElement5 = document.querySelector('input[name=name]');
+      /* traz todos os elementos de input e nao apenas o primeiro */
+      var inputElement6 = document.querySelectorAll('input');
+     
+      /* uma variacao de disparar uma funcao onclick por exemplo direto no javascript */
+      /* procurando por um button que tem a classe botao */
+      var btnElemento = document.querySelector('button.botao');
+
+      //criando uma função onclick para o btnElemento
+      btnElemento.onclick = function(){
+        /* incrementando um pouco para aparecer o nome do input name */
+        var text = inputElement5.value;
+        alert(text);
+      }
+        /* LIDANDO COM ELEMENTOS DO DOM */
+        /* criando um elemento link (a) */
+      var linkElement = document.createElement('a')
+
+      /* dessa forma é possivel colocar qualquer atributo do elemento escolhido, como title, id, class, etc */
+      linkElement.setAttribute('href', 'http://rocketseat.com.br');
+      /* linkElement.href('...') */
+      
+      /*criando um elemento para o texto do link para acessar o site */
+      var textElement = document.createTextNode('Acessar site da rocketseat');
+     
+      /* posicionar o texto dentro do elemento com o link, ou seja, adicionando 
+      o texto como um filho do linkElement */
+      linkElement.appendChild(textElement);
+
+      /* referenciando a div app para jogar o linkELement la dentro */
+      /* referenciando o ID app da div */
+      var containerElement = document.querySelector('#app');
+      containerElement.appendChild(linkElement);
+    
+      /* removendo um elemento */
+      var inputElementozin = document.querySelector('#nomezin');
+      containerElement.removeChild(inputElementozin);
+
+      /* CONTROLANDO OS ESTILOS CSS VIA JAVASCRIPT */
+      /* referenciando a classe box */
+      var boxElement = document.querySelector('.box');
+      boxElement.style.width = 100;
+      boxElement.style.height = 100;
+      boxElement.style.backgroundColor = '#f00';
+
+    </script>
+  </body>
+  
+</html>

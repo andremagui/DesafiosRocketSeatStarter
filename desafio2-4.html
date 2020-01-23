@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title> Curso Manipulando a DOM</title>
+  </head>
+  <body>
+    <div id="app">
+      
+    </div>
+  
+    <script>
+      var nomes = ["Diego", "Gabriel", "Lucas"]; 
+
+
+
+      var UnorderedList = document.createElement('ul');
+
+
+      var inputElement = document.createElement('input');
+      inputElement.setAttribute('type', 'text');
+      inputElement.setAttribute('name', 'nome');
+
+      var buttonElement = document.createElement('button');
+      var textButton = document.createTextNode('Adicionar');
+      buttonElement.appendChild(textButton);
+
+
+      var containerElement = document.querySelector('#app');
+      containerElement.appendChild(inputElement);
+      containerElement.appendChild(UnorderedList);   
+      containerElement.appendChild(buttonElement);
+
+      var botaoElement = document.querySelector('button');
+      buttonElement.onclick = function adicionar() {
+        var nome = inputElement.value;
+        
+        var List = document.createElement('li');
+        
+        var UnListElement = document.querySelector('#app ul');
+        UnListElement.appendChild(List);
+
+        List.insertAdjacentText("afterbegin", nome);
+        inputElement.value = '';
+      }
+
+
+      for(var i = 0; i < nomes.length; i++){
+        var List = document.createElement('li');
+        
+        var UnListElement = document.querySelector('#app ul');
+        UnListElement.appendChild(List);
+
+        List.insertAdjacentText("afterbegin", nomes[i]);
+      }
+
+
+
+    /* Seguindo o resultado do exercício anterior adicione um input em tela e um botão como a seguir:
+
+    <input type="text" name="nome">
+    <input onClick="adicionar()">Adicionar</input>
+
+    Ao clicar no botão, a função adicionar() deve ser disparada adicionando um novo item a lista de
+    nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
+    demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique. */
+
+    </script>
+  </body>
+</html>

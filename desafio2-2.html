@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title> Curso Manipulando a DOM</title>
+  </head>
+  <body>
+    <div id="app">
+      <button onClick="clicar()">Criar quadrado</button>
+    </div>
+  
+    <script>
+      
+        function clicar(){
+          var boxElement = document.createElement("div");
+          boxElement.style.width = 100;
+          boxElement.style.height = 100;
+          boxElement.style.margin = 10;
+          boxElement.style.backgroundColor = '#f00';   
+
+          //boxElement.classList.add('box');    
+          
+          document.body.appendChild(boxElement);
+          /* let changeColor = document.querySelector('.box');
+          boxElement.setAttribute('onmouseover', 'changeCor()'); */
+
+            boxElement.onmouseover = function(){
+              boxElement.style.backgroundColor = getRandomColor();
+            }
+        }
+
+        /* function changeCor(){
+            var changeColor = document.querySelectorAll('.box')
+            changeColor[i].style.backgroundColor = getRandomColor();
+            console.log(changeColor);
+          } */
+
+          function getRandomColor() {
+          var letters = "0123456789ABCDEF";
+          var color = "#";
+          for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+          }
+          return color;
+          }
+          var newColor = getRandomColor(); // #E943F0
+      
+        
+
+        
+    
+    
+    /* Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+aparecer na tela. */
+
+      
+
+
+    </script>
+  </body>
+    </html>

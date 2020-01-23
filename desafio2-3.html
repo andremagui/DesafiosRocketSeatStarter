@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title> Curso Manipulando a DOM</title>
+  </head>
+  <body>
+    <div id="app">
+      
+    </div>
+  
+    <script>
+    var nomes = ["Diego", "Gabriel", "Lucas"];  
+    
+    var UnorderedList = document.createElement('ul');
+
+    var containerElement = document.querySelector('#app');
+    containerElement.appendChild(UnorderedList);
+
+    for(var i = 0; i < nomes.length; i++){
+    var List = document.createElement('li');
+    
+    var UnListElement = document.querySelector('#app ul');
+    UnListElement.appendChild(List);
+
+    List.insertAdjacentText("afterbegin", nomes[i]);
+    }
+
+
+
+
+
+
+
+
+    
+
+      /* Preencha uma lista (<ul>) no HTML com os itens da seguinte forma:
+      ● Diego
+      ● Gabriel
+      ● Lucas */
+    </script>
+  </body>
+    </html>

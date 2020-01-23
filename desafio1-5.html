@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title> Curso Manipulando a DOM</title>
+  </head>
+  <body>
+    <div id="app">
+
+    </div>
+  
+    <script>
+    
+      function habil(array){
+        for (const iterator of array) {
+          let a = iterator;
+          const b = a.nome;
+          const c = a.habilidades.join(', ');
+          var d = 'O ' + b + ' possui habilidades: ' + c;
+          console.log(d);
+        }
+        
+      }
+      
+        var usuarios = [
+          {
+          nome: "Diego",
+          habilidades: ["Javascript", "ReactJS", "Redux"]
+          },
+          {
+          nome: "Gabriel",
+          habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+          }
+          ];
+
+          console.log(habil(usuarios));
+    /* O Diego possui as habilidades: Javascript, ReactJS, Redux
+    O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir */
+
+    </script>
+  </body>
+    </html>

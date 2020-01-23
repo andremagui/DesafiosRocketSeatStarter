@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title> Curso Manipulando a DOM</title>
+  </head>
+  <body>
+    <div id="app">
+      <button onClick="clicar()">Criar quadrado</button>
+      
+    </div>
+  
+    <script>
+        
+      
+        function clicar(){
+          let boxElement = document.createElement("div");
+          boxElement.style.width = 100;
+          boxElement.style.height = 100;
+          boxElement.style.margin = 10;
+          boxElement.style.backgroundColor = '#f00';   
+
+          boxElement.classList.add('box');    
+
+          document.body.appendChild(boxElement);
+        }
+        
+    
+    
+    /* Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+aparecer na tela. */
+
+    </script>
+  </body>
+    </html>
